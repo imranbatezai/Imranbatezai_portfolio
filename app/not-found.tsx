@@ -16,8 +16,8 @@ export default function NotFound() {
           This page isn&apos;t on the record.
         </h1>
         <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-white/60">
-          The page you're looking for doesn't exist or may have moved. Head
-          back to the homepage to find what you need.
+          The page you&apos;re looking for doesn&apos;t exist or may have
+          moved. Head back to the homepage to find what you need.
         </p>
         <Link
           href="/"
