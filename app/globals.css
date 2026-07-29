@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  @apply bg-paper text-charcoal font-body antialiased;
+}
+
+::selection {
+  background-color: #147d77;
+  color: #ffffff;
+}
+
+/* Focus visibility for keyboard navigation */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #147d77;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Thin, quiet scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f5f6f8;
+}
+::-webkit-scrollbar-thumb {
+  background: #c7ced5;
+  border-radius: 999px;
+  border: 2px solid #f5f6f8;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a9b2ba;
+}
+
+/* -----------------------------------------------------------------------
+   "Field Ledger" timeline — the signature motif used in Experience and
+   Education. Styled like a surveyor's measuring tape / lab notebook
+   margin: a dashed transect line with small square data-point nodes and
+   monospaced tick labels, echoing the fieldwork + data-analysis subject
+   matter rather than a generic numbered list.
+   ----------------------------------------------------------------------- */
+.ledger-rail {
+  position: relative;
+}
+
+.ledger-rail::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 6px;
+  bottom: 6px;
+  width: 1px;
+  background-image: linear-gradient(to bottom, #b9c2ca 0, #b9c2ca 6px, transparent 6px, transparent 12px);
+  background-size: 1px 12px;
+}
+
+.ledger-node {
+  position: relative;
+  z-index: 1;
+  width: 11px;
+  height: 11px;
+  border: 2px solid #147d77;
+  background: #f5f6f8;
+  transform: rotate(45deg);
+  flex: none;
+}
+
+.ledger-node--filled {
+  background: #147d77;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.container-content {
+  @apply mx-auto w-full max-w-content px-6 sm:px-8 lg:px-10;
+}
