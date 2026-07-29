@@ -81,11 +81,26 @@ be tracked in git.
 
 ## The CV download
 
-The "Download CV" buttons link to `/Imran-Khan-Batezai-CV.pdf`, which
-should live in the `public/` folder at the project root as
-`public/Imran-Khan-Batezai-CV.pdf`. A starting version generated from this
-same CV content is included — replace it any time by dropping in a new
-file with the same name.
+The "Download CV" button (in the Hero section) links to
+`/Imran-Khan-Batezai-CV.pdf`, which lives in `public/` at the project
+root. A version generated from this same CV content is included —
+replace it any time by dropping in a new file with the same name.
+(Note: the CV download button was intentionally removed from the
+navbar — it's currently only in the Hero section.)
+
+## Adding a real profile photo
+
+The Hero section is wired to show a real photo automatically. Just add
+a photo file named exactly:
+
+```
+public/profile.jpg
+```
+
+As soon as that file exists, it replaces the placeholder — no code
+changes needed. Until then, the site shows a clean, professional
+silhouette placeholder instead of a fabricated photo. A square image
+(at least 440×440px) works best, since it's cropped into a circle.
 
 ## Deploying to Vercel (free Hobby plan)
 

@@ -1,7 +1,9 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Download, Mail, MapPin } from "lucide-react";
+import { ArrowRight, Download, Mail, MapPin, User } from "lucide-react";
 import Container from "./ui/Container";
 import { site } from "@/lib/data";
 
@@ -133,35 +135,70 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          <motion.div variants={item} className="relative mx-auto w-full max-w-[320px]">
-            <div className="relative aspect-square w-full">
-              <div className="absolute inset-0 rounded-full border border-dashed border-teal-light/40" />
-              <div className="absolute inset-6 rounded-full border border-white/10" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="flex h-[220px] w-[220px] items-center justify-center rounded-full bg-gradient-to-br from-navy-light to-navy-deep ring-1 ring-white/10">
-                  <span className="font-display text-5xl font-medium text-white">
-                    IKB
-                  </span>
-                </div>
-              </div>
-              {/* Corner survey-mark ticks */}
-              {["-top-1 -left-1", "-top-1 -right-1", "-bottom-1 -left-1", "-bottom-1 -right-1"].map(
-                (pos) => (
-                  <span
-                    key={pos}
-                    className={`absolute ${pos} h-3 w-3 border-teal-light/70 ${
-                      pos.includes("top") ? "border-t" : "border-b"
-                    } ${pos.includes("left") ? "border-l" : "border-r"}`}
-                  />
-                )
-              )}
-            </div>
-            <p className="mt-6 text-center font-mono text-[11px] uppercase tracking-[0.25em] text-white/40">
-              Ph.D. Scholar &middot; Peshawar, Pakistan
-            </p>
-          </motion.div>
+          <ProfileVisual />
         </motion.div>
       </Container>
     </section>
+  );
+}
+
+function ProfileVisual() {
+  // Tries to load a real photo from /public/profile.jpg. If it isn't there
+  // yet, this quietly falls back to a clean placeholder — no broken-image
+  // icon ever flashes, and the moment a real photo file is added, it takes
+  // over automatically with no code changes needed.
+  const [photoStatus, setPhotoStatus] = useState<"checking" | "found" | "missing">(
+    "checking"
+  );
+
+  useEffect(() => {
+    const probe = new window.Image();
+    probe.onload = () => setPhotoStatus("found");
+    probe.onerror = () => setPhotoStatus("missing");
+    probe.src = "/profile.jpg";
+  }, []);
+
+  return (
+    <motion.div variants={item} className="relative mx-auto w-full max-w-[320px]">
+      <div className="relative aspect-square w-full">
+        <div className="absolute inset-0 rounded-full border border-dashed border-teal-light/40" />
+        <div className="absolute inset-6 rounded-full border border-white/10" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="relative h-[220px] w-[220px] overflow-hidden rounded-full bg-gradient-to-br from-navy-light to-navy-deep ring-1 ring-white/10">
+            {photoStatus === "found" ? (
+              <Image
+                src="/profile.jpg"
+                alt={site.name}
+                fill
+                sizes="220px"
+                className="object-cover"
+                priority
+              />
+            ) : (
+              <div className="flex h-full w-full items-center justify-center">
+                <User
+                  className="h-20 w-20 text-teal-light/50"
+                  strokeWidth={1.25}
+                />
+              </div>
+            )}
+          </div>
+        </div>
+        {/* Corner marks framing the photo slot, like a viewfinder */}
+        {["-top-1 -left-1", "-top-1 -right-1", "-bottom-1 -left-1", "-bottom-1 -right-1"].map(
+          (pos) => (
+            <span
+              key={pos}
+              className={`absolute ${pos} h-3 w-3 border-teal-light/70 ${
+                pos.includes("top") ? "border-t" : "border-b"
+              } ${pos.includes("left") ? "border-l" : "border-r"}`}
+            />
+          )
+        )}
+      </div>
+      <p className="mt-6 text-center font-mono text-[11px] uppercase tracking-[0.25em] text-white/40">
+        Ph.D. Scholar &middot; Peshawar, Pakistan
+      </p>
+    </motion.div>
   );
 }

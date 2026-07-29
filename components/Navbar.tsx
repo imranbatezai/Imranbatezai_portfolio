@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Container from "./ui/Container";
-import { navLinks, site } from "@/lib/data";
+import { navLinks } from "@/lib/data";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -61,17 +61,6 @@ export default function Navbar() {
             ))}
           </ul>
 
-          <div className="hidden lg:block">
-            <a
-              href={site.cvFile}
-              download
-              className="inline-flex items-center gap-2 rounded-sm bg-teal px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-teal-light"
-            >
-              <Download className="h-4 w-4" strokeWidth={2} />
-              Download CV
-            </a>
-          </div>
-
           <button
             type="button"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -109,14 +98,6 @@ export default function Navbar() {
                   </li>
                 ))}
               </ul>
-              <a
-                href={site.cvFile}
-                download
-                className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-sm bg-teal px-4 py-3 text-sm font-medium text-white"
-              >
-                <Download className="h-4 w-4" />
-                Download CV
-              </a>
             </Container>
           </motion.div>
         )}
