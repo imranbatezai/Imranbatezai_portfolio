@@ -152,25 +152,7 @@ export const expertise: ExpertiseItem[] = [
 ];
 
 export const experience: ExperienceItem[] = [
-  {
-    title: "Data & Reporting Analyst",
-    organization: "Integrated Communication Information Management System (ICIMS)",
-    location: "Peshawar",
-    dates: "Jul 2025 – Present",
-    current: true,
-    responsibilities: [
-      "Preparing weekly, monthly and quarterly reports",
-      "Preparing briefing materials and presentations",
-      "Synthesizing epidemiological and surveillance data",
-      "Tracking polio programme activities",
-      "Monitoring progress toward eradication targets",
-      "Conducting quantitative and qualitative data analysis",
-      "Managing large volumes of administrative, coverage and programme data",
-      "Reviewing published literature and web resources",
-      "Producing data visualizations",
-      "Preparing written summaries for policymakers, government counterparts and programme stakeholders",
-    ],
-  },
+
   {
     title: "Data & Research Analyst",
     organization: "Integrated Communication Information Management System (ICIMS)",
