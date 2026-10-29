@@ -46,7 +46,7 @@ export const navLinks: NavLink[] = [
 export const highlights: HighlightStat[] = [
   { value: "10+", label: "Years Professional Experience" },
   { value: "Ph.D.", label: "Scholar & Researcher" },
-  { value: "5", label: "Peer-Reviewed Publications" },
+  { value: "5 ", label: "Peer-Reviewed Publications" },
   { value: "1", label: "International Publications" },
   { value: "40", label: "Temporary Education Centres Established" },
   { value: "2,000", label: "Out-of-School Children Enrolled" },
