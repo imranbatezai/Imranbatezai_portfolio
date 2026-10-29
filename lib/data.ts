@@ -46,8 +46,8 @@ export const navLinks: NavLink[] = [
 export const highlights: HighlightStat[] = [
   { value: "10+", label: "Years Professional Experience" },
   { value: "Ph.D.", label: "Scholar & Researcher" },
-  { value: "4", label: "Peer-Reviewed Publications" },
-  { value: "3", label: "HEC-Recognized Journal Contributions" },
+  { value: "5", label: "Peer-Reviewed Publications" },
+  { value: "1", label: "International Publications" },
   { value: "40", label: "Temporary Education Centres Established" },
   { value: "2,000", label: "Out-of-School Children Enrolled" },
   { value: "80", label: "TEC Teachers Hired & Trained" },
