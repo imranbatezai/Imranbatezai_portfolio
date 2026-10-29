@@ -323,7 +323,7 @@ export const phdResearch = {
 };
 
 export const publications: Publication[] = [
-  {
+   {
     citation: "Batezai, I. K., & Kiazai, A. N. (2022). Impact of Accelerated Learning Programs (ALPs) to achieve Sustainable Development Goals (SDGs) targets in District Quetta.",
     year: "2022",
     journal: "Journal of Development and Social Sciences, 3(2), 748–761",
@@ -333,16 +333,24 @@ export const publications: Publication[] = [
     citation: "Descriptive analysis of Accelerated Learning Program centers to provide access and quality education to out-of-school children in Quetta.",
     year: "2020",
     journal: "The Sindh University Journal of Education (SUJE), 49",
+    doi: "https://sujo.usindh.edu.pk/index.php/SUJE/article/view/3614/2702",
   },
   {
     citation: "Empirical assessment of the reasons for out-of-school children at Accelerated Learning Program centers in District Quetta.",
     year: "2020",
     journal: "Pakistan Studies Journal, 11",
+    doi: "https://www.academia.edu/128022908/Empirical_Assessment_of_the_Reasons_of_Out_of_School_Children_in_Accelerated_Learning_Program_Centers_in_District_Quetta_",
   },
   {
     citation: "Social and cultural barriers towards female education in District Pishin.",
     year: "2021",
     journal: "Journal of Humanities and Educational Research, 11",
+  },
+  {
+    citation: "Batezai, I. K., & Ali, A. (2025). Connecting the disconnected: From school exclusion to educational transition through Accelerated Learning Programs in Balochistan, Pakistan.",
+    year: "2025",
+    journal: "TPM – Testing, Psychometrics, Methodology in Applied Psychology, 32(4), 1910-1925",
+    doi: "https://tpmap.org/submission/index.php/tpm/article/view/4661",
   },
 ];
 
